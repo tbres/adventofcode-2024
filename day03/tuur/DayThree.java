@@ -2,10 +2,8 @@ package tuur;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class DayThree {
 
@@ -14,12 +12,11 @@ public class DayThree {
 	private static final Pattern PATTERN = Pattern.compile(REGEX);
 	
 	public static void main(String[] args) throws Exception {
-		List<String> lines = Files.readAllLines(Paths.get(DayThree.class.getResource("input-day03.txt").toURI()));
+		//don't work line by line, the enabled/disabled state for part 2 is global!
+		String memory = Files.readString(Paths.get(DayThree.class.getResource("input-day03.txt").toURI()));
 
-		System.out.println("Part 1: " + lines.stream().mapToLong(DayThree::accumalate).sum());
+		System.out.println("Part 1: " + accumalate(memory));
 
-		//don't work line by line, the enabled/disabled state carries over!
-		String memory = lines.stream().collect(Collectors.joining()); 
 		System.out.println("Part 2: " + accumalate(clean(memory)));
 	}
 
