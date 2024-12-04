@@ -44,7 +44,7 @@ public class DayThree {
 					current = index;
 				} else {
 					result.append(input.substring(current, end));
-					current = end;
+					break;
 				}
 			} else {
 				int index = input.indexOf("do()", current);
@@ -52,7 +52,7 @@ public class DayThree {
 					enabled = true;
 					current = index;
 				} else {
-					current = end;
+					break;
 				}
 			}
 		}
