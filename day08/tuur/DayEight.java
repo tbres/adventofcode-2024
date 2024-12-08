@@ -36,12 +36,12 @@ public class DayEight {
 					int dX = first.x - second.x;
 					int dY = first.y - second.y;
 
-					Coord antinodeOne = new Coord(second.x - dX, second.y - dY);
+					Coord antinodeOne = second.adding(-dX, -dY);
 					if (inRange(antinodeOne, 0, sizeX, 0, sizeY)) {
 						antinodes.add(antinodeOne);
 					}
 
-					Coord antinodeTwo = new Coord(first.x + dX, first.y + dY);
+					Coord antinodeTwo = first.adding(dX, dY);
 					if (inRange(antinodeTwo, 0, sizeX, 0, sizeY)) {
 						antinodes.add(antinodeTwo);
 					}
@@ -69,16 +69,16 @@ public class DayEight {
 					int dX = first.x - second.x;
 					int dY = first.y - second.y;
 
-					Coord antinodeOne = new Coord(second.x - dX, second.y - dY);
+					Coord antinodeOne = second.adding(-dX, -dY);
 					while (inRange(antinodeOne, 0, sizeX, 0, sizeY)) {
 						antinodes.add(antinodeOne);
-						antinodeOne = new Coord(antinodeOne.x - dX, antinodeOne.y - dY);
+						antinodeOne = antinodeOne.adding(-dX, -dY);
 					}
 
-					Coord antinodeTwo = new Coord(first.x + dX, first.y + dY);
+					Coord antinodeTwo = first.adding(dX, dY);
 					while (inRange(antinodeTwo, 0, sizeX, 0, sizeY)) {
 						antinodes.add(antinodeTwo);
-						antinodeTwo = new Coord(antinodeTwo.x + dX, antinodeTwo.y + dY);
+						antinodeTwo = antinodeTwo.adding(dX, dY);
 					}
 				}
 			}
@@ -100,7 +100,9 @@ public class DayEight {
 				Character shape = line.charAt(x);
 				Coord coord = new Coord(x, y);
 				if ('.' != shape) {
-					antennas.computeIfAbsent(shape, ArrayList::new).add(coord);
+					antennas
+						.computeIfAbsent(shape, ArrayList::new)
+						.add(coord);
 				}
 			}
 		}
@@ -121,6 +123,10 @@ public class DayEight {
 
 		public int getY() {
 			return y;
+		}
+
+		public Coord adding (int dX, int dY) {
+			return new Coord(x + dX, y + dY);
 		}
 
 		@Override
