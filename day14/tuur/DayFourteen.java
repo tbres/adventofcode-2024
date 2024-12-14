@@ -20,9 +20,12 @@ public class DayFourteen {
 
 	public static void main(String[] args) throws Exception {
 		List<String> lines = Files.readAllLines(Paths.get(DayFourteen.class.getResource("input-day14.txt").toURI()));
-
-		List<Coord> velocities = new ArrayList<>();
-		List<Coord> initialPositions = new ArrayList<>();
+		
+		final int sizeX = 101;
+		final int sizeY = 103;
+		
+		final List<Coord> velocities = new ArrayList<>();
+		final List<Coord> initialPositions = new ArrayList<>();
 		for (String line : lines) {
 			Matcher matcher = PATTERN.matcher(line);
 			if (matcher.matches()) {
@@ -36,59 +39,42 @@ public class DayFourteen {
 			}
 		}
 
-		final int sizeX = 101;
-		final int sizeY = 103;
-
 		List<Coord> positions = initialPositions;
 		for (int time = 1; time <= 100; time++) {
-			positions = partOne(positions, velocities, sizeX, sizeY);
+			positions = move(positions, velocities, sizeX, sizeY);
 		}
-
 		System.out.println("Part 1: " + safetyFactor(positions, sizeX, sizeY));
 
-
 		positions = initialPositions;
-		for (int time = 1; time <= 1_000_000; time++) {
-			positions = partOne(positions, velocities, sizeX, sizeY);
+		int time = 0;
+		for (time = 1; time <= 1_000_000; time++) {
+			positions = move(positions, velocities, sizeX, sizeY);
 
 			Set<Coord> uniquePositions = new HashSet<>(positions);
 			if (positions.size() == uniquePositions.size()) { // How are you supposed to guess this?
-
-				System.out.println();
-				System.out.println("Part 2: After " + time +  " seconds");
 				print(positions, sizeX, sizeY);				
 				break;
 			}
 		}
+		System.out.println("Part 2: After " + time +  " seconds");
 
 	}
 
 
-	private static List<Coord> partOne(List<Coord> initialPositions, List<Coord> velocities, int sizeX, int sizeY) {
+	private static List<Coord> move(List<Coord> initialPositions, List<Coord> velocities, int sizeX, int sizeY) {
 		List<Coord> positions = new ArrayList<>();
 
 		for (int i = 0; i < initialPositions.size(); i++) {
 			Coord pos = initialPositions.get(i);
 			Coord vel = velocities.get(i);
 
-			int newX = wrap(pos.x + vel.x, sizeX);
-			int newY = wrap(pos.y + vel.y, sizeY);
+			int newX = Math.floorMod(pos.x + vel.x, sizeX);
+			int newY = Math.floorMod(pos.y + vel.y, sizeY);
 
 			positions.add(new Coord(newX, newY));
 		}
 		
 		return positions;
-	}
-
-	private static int wrap (int value, int max) {
-		int result = value;
-		if (value < 0) {
-			result = value + max;
-		}
-		if (value >= max) {
-			result = value - max;
-		}
-		return result;
 	}
 
 	private static long safetyFactor(List<Coord> positions, int sizeX, int sizeY) {
@@ -112,8 +98,6 @@ public class DayFourteen {
 				}
 			}
 		}
-
-		System.out.println(q1 + " " + q2 + " " + q3 + " " + q4);
 
 		return q1 * q2 * q3 * q4;
 	}
