@@ -1,74 +1,83 @@
 //package tuur;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class DaySeventeen {
-	
+	/* DECOMPILED PROGRAM:
+	 * 
+	 * BST 4 : B = A mod 8 (take the first 3 bits = 1 octal)
+	 * BXL 1 : B = B XOR 1
+	 * CDV 5 : C = A / 2^B (shiftleft by B bits)
+	 * BXL 5 : B = B XOR 5
+	 * BXC 0 : B = B XOR C
+	 * OUT 5 : OUTPUT B
+	 * ADV 3 : A = A / 2^3 (A shift left 3 bits or 1 octal)
+	 * JNZ 0 : JUMP to beginning if A != 0 (repeat the program)
+	 * 
+	 * Remarks: 
+	 * - The program always repeats these 8 steps. 
+	 * - Only the value of A is carried over between each repeat: B and C are deduced from A
+	 * - The value of A gets smaller each iteration (shiftleft by 3 bits)
+	 */
 	public static void main(String[] args) throws Exception {
-		List<String> lines = Files.readAllLines(Paths.get(DaySeventeen.class.getResource("input-day17.txt").toURI()));
-		
-		// Sample
-		// Long registerA = 729;
-		// Long registerB = 0;
-		// Long registerC = 0;
-		// List<Long> program = List.of(0,1,5,4,3,0);
-
-		// Sample part 2
-		// Long registerA = 2024;
-		// Long registerB =  0;
-		// Long registerC =  0;
-		// List<Long> program = List.of(0,3,5,4,3,0);
-
-		// Input
-		Long registerA = 64854237l; //35184372088832
+		Long registerA = 64854237l;
 		Long registerB = 0l;
 		Long registerC = 0l;
 		List<Integer> program = List.of(2,4,1,1,7,5,1,5,4,0,5,5,0,3,3,0);
 		
 		System.out.println("Part 1: " + runProgram(registerA, registerB, registerC, program));
-		//final String expected = program.stream().map(i -> "" + i).collect(Collectors.joining(","));
-		//partTwo(registerB, registerC, program);
 
-		partTwo(0l, 0l, program, "2,4,1,1,7,5,1,5,4,0,5,5,0,3,3,0");
+		System.out.println("Part 2: " + partTwo(program));
 	}
 
-	private static void partTwo(Long registerB, Long registerC, List<Integer> program, String expected) {
+	/**
+	 * Working backwards to get close to the final result: 
+	 * 1. find a number that produces the last element of the program, 
+	 * 2. then multiply it by 8 (or shift right by 3). <- figured this out by manually 'decompiling the program'
+	 * 3. use that as a starting point to find a number that produces the last 2 elements of the program.
+	 * 4. REPEAT
+	 */
+	private static long partTwo(List<Integer> program) {
 		// long start = 78334343l; 		//"5,4,0,5,5,0,3,3,0"
 		// long start = 626674746l; 	//"1,5,4,0,5,5,0,3,3,0"
 		// long  start = 5013397978l; 	//"5,1,5,4,0,5,5,0,3,3,0"
 		// long start = 40107183830l; 	//"7,5,1,5,4,0,5,5,0,3,3,0"
 		// long start = 320857470647l; 	//"1,7,5,1,5,4,0,5,5,0,3,3,0"
 		// long start = 2566859765178l; //"1,1,7,5,1,5,4,0,5,5,0,3,3,0"
-		long start = 20534878121424l; //"4,1,1,7,5,1,5,4,0,5,5,0,3,3,0"
+		// long start = 20534878121424l; //"4,1,1,7,5,1,5,4,0,5,5,0,3,3,0"
 		// long start = 164279024971453l;	//"2,4,1,1,7,5,1,5,4,0,5,5,0,3,3,0"
-		long next = start << 3;
+		
+		long a = 0l;
+		for (int i = 0; i < program.size(); i++) {
+			StringJoiner expected = new StringJoiner(",");
+			for (int j = program.size() - i - 1; j < program.size(); j++) {
+				expected.add(Integer.toString(program.get(j)));
+			}
+			
+			a = a << 3; // doing this unnecessarily the first time, but otherwise 'a' gets overwritten in the last iteration.
+			a = bruteForce(a, program, expected.toString());		
+		}
+		return a;
+	}
 
-		for (long a = next; a < Long.MAX_VALUE; a++) {
+	private static long bruteForce(long startA, List<Integer> program, String expected) {
+
+		for (long a = startA; a < Long.MAX_VALUE; a++) {
 			String output = runProgram(a, 0l, 0l, program);
 			if (expected.equals(output)) {
-				System.out.println(expected);
-				System.out.println("Part 2: " + a+ " -> " + Long.toOctalString(a));
-				return;
+				return a;
 			}
-
 		}
-		System.out.println("Part 2: UNKNOWN");
+
+		throw new RuntimeException("Nothing found.");
 	}
 
 	private static String runProgram(long registerA, long registerB, long registerC, List<Integer> program) {
 		StringJoiner output = new StringJoiner(",");
 		
-		int instructionCounter = 0; // increases by 2 (after the instruction)
-		final int size = program.size();
-
-		// int idx = 1;
-		while (instructionCounter + 1 < size) {
+		int instructionCounter = 0;
+		while (instructionCounter + 1 < program.size()) {
 			int opcode = program.get(instructionCounter);
 			long operand = program.get(instructionCounter + 1);
 
@@ -113,24 +122,10 @@ public class DaySeventeen {
 			}
 
 			if (!jump) {
-				instructionCounter += 2;
+				instructionCounter += 2;  // increases by 2 (after the instruction), unless a jump instruction was executed.
 			}
 		}
 		return output.toString();
-	}
-
-	private static final String operationName(int opcode) {
-		return switch (opcode) {
-			case 0 -> "adv";
-			case 1 -> "bxl";
-			case 2 -> "bst";
-			case 3 -> "jnz";
-			case 4 -> "bxc";
-			case 5 -> "out";
-			case 6 -> "bdv";
-			case 7 -> "cdv";
-			default -> "UNKNOWN";
-		};
 	}
 
 	private static long comboOperand (long operand, long registerA, long registerB, long registerC) {
