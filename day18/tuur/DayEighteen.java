@@ -1,3 +1,4 @@
+package tuur;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -64,16 +65,15 @@ public class DayEighteen {
 		List<Coord> toInvestigate = new ArrayList<>();
 		toInvestigate.add(start);
 		shortestPaths.put(start, 0);
-		
+
 		while (!toInvestigate.isEmpty()) {
 			List<Coord> next = new ArrayList<>();
 
 			for (Coord coord : toInvestigate) {
-				int distance = shortestPaths.get(coord) + 1;
+				int distance = shortestPaths.get(coord) + 1; // we have already visited 'coord'
 				
 				for (Coord neighbour: coord.neighbours()) {
-					if (0 <= neighbour.x && neighbour.x <= end.x
-							&& 0 <= neighbour.y && neighbour.y <= end.y
+					if (0 <= neighbour.x && neighbour.x <= end.x && 0 <= neighbour.y && neighbour.y <= end.y
 							&& memory.getOrDefault(neighbour, '.') != '#'
 							&& shortestPaths.getOrDefault(neighbour, Integer.MAX_VALUE) > distance) {
 						
