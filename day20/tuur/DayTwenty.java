@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -31,48 +32,45 @@ public class DayTwenty {
 			}
 		}
 
-
-
-		System.out.println("Part 1: " + partOne(result, start, end, 100));
-
-		System.out.println("Part 2: ");
-
+		System.out.println("Part 1: " + solve(result, start, end, 2, 100));
+		System.out.println("Part 2: " + solve(result, start, end, 20, 100));
 	}
 
-	private static final Set<Coord> directions = Set.of(new Coord(1, 0), new Coord(-1, 0), new Coord(0, 1), new Coord (0, -1));
+	private static int solve(
+			Map<Coord, Character> track, 
+			final Coord start, final Coord end,
+			final int cheatDuration, final int savingsThreshold) {
 
-	private static int partOne(Map<Coord, Character> track, final Coord start, final Coord end, final int savingsThreshold) {
 		Map<Coord, Integer> distances = pathFinding(track, start, end);
 		Map<Coord, Integer> reverse = pathFinding(track, end, start);
-
 		final int best = distances.get(end);
 
-		int shortcuts = 0;
-
+		Set<Path> cheats = new HashSet<>();
 		for (Coord location: distances.keySet()) {
 			final int distance = distances.get(location);
 
-			for (Coord direction: directions) {
-				Coord neighbour = location.adding(direction);
-
-				if (track.getOrDefault(neighbour, '.') == '#') {
-					Coord neighneighbour = neighbour.adding(direction);
-
-					if (reverse.containsKey(neighneighbour)) {
-						int remainingDistance = reverse.get(neighneighbour);
-
-						int total = distance + remainingDistance + 2;
-
-						if (total + savingsThreshold <= best) {
-							// System.out.println("Found a shortcut from " + location + " to " + neighneighbour + " -> " + total);
-							shortcuts++;
+			Set<Coord> toInvestigate = new HashSet<>(location.neighbours());
+			for (int i = 1; i <= cheatDuration; i++) {
+				Set<Coord> next = new HashSet<>();
+				
+				for (Coord neighbour: toInvestigate) {
+					if (track.getOrDefault(neighbour, '.') != '#') {
+						if (reverse.containsKey(neighbour)) {
+							int remainingDistance = reverse.get(neighbour);
+							int total = distance + remainingDistance + i;
+							
+							if (total + savingsThreshold <= best) {
+								cheats.add(new Path(location, neighbour));
+							}
 						}
 					}
+					next.addAll(neighbour.neighbours());
 				}
-			}
+				toInvestigate = next;
+			}	
 		}
 
-		return shortcuts;
+		return cheats.size();
 	}
 
 	private static Map<Coord, Integer> pathFinding(Map<Coord, Character> track, final Coord start, final Coord end) {
@@ -102,6 +100,8 @@ public class DayTwenty {
 
 		return shortestPaths;
 	}
+
+	private static record Path(Coord start, Coord end) {}
 
 	private static final class Coord {
 		final int x, y;
