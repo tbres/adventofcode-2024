@@ -1,0 +1,668 @@
+digraph {
+        z07 [shape=egg]
+        z07 -> qqs
+        z07 -> vhc
+        z06 [shape=egg]
+        z06 -> tmr
+        z06 -> svg
+        z09 [shape=egg]
+        z09 -> jpw
+        z09 -> hvj
+        bqq [shape=box, color=blue]
+        bqq -> y22
+        bqq -> x22
+        z08 [shape=egg]
+        z08 -> krj
+        z08 -> djc
+        mwq [shape=box, color=blue]
+        mwq -> x21
+        mwq -> y21
+        pmc [shape=box, color=blue]
+        pmc -> x20
+        pmc -> y20
+        kcd [shape=house, color=red]
+        kcd -> jss
+        kcd -> hhr
+        rqn [shape=box, color=blue]
+        rqn -> hhf
+        rqn -> fjh
+        ksv [shape=egg]
+        ksv -> y18
+        ksv -> x18
+        z10 [shape=egg]
+        z10 -> hhf
+        z10 -> fjh
+        z12 [shape=egg]
+        z12 -> tnf
+        z12 -> gsp
+        ktd [shape=house, color=red]
+        ktd -> jjw
+        ktd -> mwq
+        z11 [shape=egg]
+        z11 -> jkg
+        z11 -> gqv
+        z14 [shape=egg]
+        z14 -> ngh
+        z14 -> kpj
+        z13 [shape=box, color=blue]
+        z13 -> x13
+        z13 -> y13
+        z16 [shape=egg]
+        z16 -> dcj
+        z16 -> vgq
+        z15 [shape=egg]
+        z15 -> pcm
+        z15 -> tfw
+        z18 [shape=egg]
+        z18 -> rmv
+        z18 -> ksv
+        ktj [shape=box, color=blue]
+        ktj -> qqs
+        ktj -> vhc
+        z17 [shape=egg]
+        z17 -> thp
+        z17 -> qvs
+        z19 [shape=box, color=blue]
+        z19 -> csn
+        z19 -> nmn
+        jrm [shape=box, color=blue]
+        jrm -> svs
+        jrm -> vsj
+        fjh [shape=house, color=red]
+        fjh -> ggk
+        fjh -> njb
+        njb [shape=box, color=blue]
+        njb -> x09
+        njb -> y09
+        tvj [shape=box, color=blue]
+        tvj -> gqv
+        tvj -> jkg
+        bbk [shape=house, color=red]
+        bbk -> svv
+        bbk -> bcd
+        njh [shape=box, color=blue]
+        njh -> y12
+        njh -> x12
+        jrw [shape=box, color=blue]
+        jrw -> dcj
+        jrw -> vgq
+        vjg [shape=house, color=red]
+        vjg -> tjn
+        vjg -> cfv
+        jbj [shape=box, color=blue]
+        jbj -> y14
+        jbj -> x14
+        bbt [shape=house, color=red]
+        bbt -> hsw
+        bbt -> qfg
+        z21 [shape=egg]
+        z21 -> fsf
+        z21 -> wnk
+        z20 [shape=egg]
+        z20 -> svm
+        z20 -> dhf
+        z23 [shape=egg]
+        z23 -> kpc
+        z23 -> vfk
+        z22 [shape=egg]
+        z22 -> pjm
+        z22 -> ktd
+        z25 [shape=house, color=red]
+        z25 -> vbw
+        z25 -> qkk
+        z24 [shape=egg]
+        z24 -> qgv
+        z24 -> cvf
+        z27 [shape=egg]
+        z27 -> bbt
+        z27 -> bcr
+        z26 [shape=egg]
+        z26 -> jnb
+        z26 -> mps
+        z29 [shape=egg]
+        z29 -> tjh
+        z29 -> dch
+        z28 [shape=egg]
+        z28 -> svs
+        z28 -> vsj
+        bcd [shape=box, color=blue]
+        bcd -> tqf
+        bcd -> kfv
+        vjv [shape=egg]
+        vjv -> x33
+        vjv -> y33
+        tfw [shape=egg]
+        tfw -> y15
+        tfw -> x15
+        dgj [shape=box, color=blue]
+        dgj -> y17
+        dgj -> x17
+        bcg [shape=box, color=blue]
+        bcg -> tfw
+        bcg -> pcm
+        twk [shape=house, color=red]
+        twk -> tsw
+        twk -> gqh
+        fkm [shape=box, color=blue]
+        fkm -> x03
+        fkm -> y03
+        jss [shape=box, color=blue]
+        jss -> ndq
+        jss -> tww
+        bcr [shape=egg]
+        bcr -> y27
+        bcr -> x27
+        cvf [shape=house, color=red]
+        cvf -> crw
+        cvf -> pjp
+        qqs [shape=egg]
+        qqs -> y07
+        qqs -> x07
+        btd [shape=box, color=blue]
+        btd -> x04
+        btd -> y04
+        tgh [shape=box, color=blue]
+        tgh -> y35
+        tgh -> x35
+        tww [shape=egg]
+        tww -> y43
+        tww -> x43
+        z30 [shape=egg]
+        z30 -> sjg
+        z30 -> grr
+        z32 [shape=egg]
+        z32 -> gck
+        z32 -> cfb
+        z31 [shape=egg]
+        z31 -> qhv
+        z31 -> twk
+        btj [shape=house, color=red]
+        btj -> hdb
+        btj -> vkr
+        kvf [shape=box, color=blue]
+        kvf -> nsv
+        kvf -> vnm
+        z34 [shape=egg]
+        z34 -> vgm
+        z34 -> qnw
+        z33 [shape=egg]
+        z33 -> hgj
+        z33 -> cqm
+        vkr [shape=box, color=blue]
+        vkr -> y37
+        vkr -> x37
+        z36 [shape=egg]
+        z36 -> tqf
+        z36 -> kfv
+        z35 [shape=egg]
+        z35 -> gbj
+        z35 -> mkt
+        cfb [shape=egg]
+        cfb -> x32
+        cfb -> y32
+        z38 [shape=egg]
+        z38 -> jwt
+        z38 -> btj
+        z37 [shape=egg]
+        z37 -> bbk
+        z37 -> phd
+        z39 [shape=egg]
+        z39 -> nsv
+        z39 -> vnm
+        cfc [shape=box, color=blue]
+        cfc -> dhf
+        cfc -> svm
+        dhf [shape=house, color=red]
+        dhf -> vwp
+        dhf -> ngr
+        svg [shape=egg]
+        svg -> x06
+        svg -> y06
+        svm [shape=egg]
+        svm -> x20
+        svm -> y20
+        mjj [shape=box, color=blue]
+        mjj -> mpf
+        mjj -> mqs
+        jdk [shape=box, color=blue]
+        jdk -> vnb
+        jdk -> hwq
+        svs [shape=egg]
+        svs -> x28
+        svs -> y28
+        cfv [shape=box, color=blue]
+        cfv -> hqj
+        cfv -> jwf
+        svv [shape=box, color=blue]
+        svv -> y36
+        svv -> x36
+        qbc [shape=box, color=blue]
+        qbc -> smv
+        qbc -> kcd
+        wnk [shape=egg]
+        wnk -> x21
+        wnk -> y21
+        z41 [shape=egg]
+        z41 -> khp
+        z41 -> frs
+        z40 [shape=egg]
+        z40 -> wvj
+        z40 -> tqm
+        z43 [shape=egg]
+        z43 -> ndq
+        z43 -> tww
+        z42 [shape=egg]
+        z42 -> kgq
+        z42 -> jff
+        kfv [shape=house, color=red]
+        kfv -> jkk
+        kfv -> tgh
+        z45 [shape=house, color=red]
+        z45 -> tqp
+        z45 -> qbc
+        z44 [shape=egg]
+        z44 -> smv
+        z44 -> kcd
+        thn [shape=egg]
+        thn -> y05
+        thn -> x05
+        thp [shape=egg]
+        thp -> x17
+        thp -> y17
+        hqj [shape=egg]
+        hqj -> y02
+        hqj -> x02
+        qbw [shape=box, color=blue]
+        qbw -> bbt
+        qbw -> bcr
+        hqt [shape=box, color=blue]
+        hqt -> kgq
+        hqt -> jff
+        pqn [shape=egg]
+        pqn -> x25
+        pqn -> y25
+        nmn [shape=egg]
+        nmn -> y19
+        nmn -> x19
+        mks [shape=egg]
+        mks -> y13
+        mks -> x13
+        kgq [shape=house, color=red]
+        kgq -> mdk
+        kgq -> jkf
+        mkt [shape=egg]
+        mkt -> x35
+        mkt -> y35
+        djc [shape=egg]
+        djc -> y08
+        djc -> x08
+        rvb [shape=box, color=blue]
+        rvb -> tmr
+        rvb -> svg
+        fnk [shape=box, color=blue]
+        fnk -> tjh
+        fnk -> dch
+        djh [shape=box, color=blue]
+        djh -> cqm
+        djh -> hgj
+        khb [shape=box, color=blue]
+        khb -> y32
+        khb -> x32
+        rvj [shape=box, color=blue]
+        rvj -> y05
+        rvj -> x05
+        jff [shape=egg]
+        jff -> y42
+        jff -> x42
+        vnb [shape=egg]
+        vnb -> y04
+        vnb -> x04
+        shd [shape=box, color=blue]
+        shd -> y38
+        shd -> x38
+        fnw [shape=box, color=blue]
+        fnw -> qgv
+        fnw -> cvf
+        bfw [shape=box, color=blue]
+        bfw -> btj
+        bfw -> jwt
+        khp [shape=house, color=red]
+        khp -> wvp
+        khp -> nwk
+        shg [shape=box, color=blue]
+        shg -> pjm
+        shg -> ktd
+        tjh [shape=house, color=red]
+        tjh -> jrm
+        tjh -> ffg
+        vnm [shape=house, color=red]
+        vnm -> shd
+        vnm -> bfw
+        jwf [shape=house, color=red]
+        jwf -> ttt
+        jwf -> mjj
+        tjn [shape=box, color=blue]
+        tjn -> y02
+        tjn -> x02
+        gqh [shape=box, color=blue]
+        gqh -> x30
+        gqh -> y30
+        pbw [shape=box, color=blue]
+        pbw -> y39
+        pbw -> x39
+        jwt [shape=egg]
+        jwt -> x38
+        jwt -> y38
+        hsw [shape=box, color=blue]
+        hsw -> jnb
+        hsw -> mps
+        gqv [shape=house, color=red]
+        gqv -> dng
+        gqv -> rqn
+        htb [shape=egg]
+        htb -> x03
+        htb -> y03
+        pcm [shape=house, color=red]
+        pcm -> snn
+        pcm -> jbj
+        grn [shape=box, color=blue]
+        grn -> y07
+        grn -> x07
+        ptf [shape=box, color=blue]
+        ptf -> htb
+        ptf -> vjg
+        grr [shape=house, color=red]
+        grr -> fnk
+        grr -> dpr
+        hdb [shape=box, color=blue]
+        hdb -> bbk
+        hdb -> phd
+        bhr [shape=house, color=red]
+        bhr -> dpq
+        bhr -> njh
+        gbj [shape=house, color=red]
+        gbj -> rhd
+        gbj -> nhb
+        rhd [shape=box, color=blue]
+        rhd -> vgm
+        rhd -> qnw
+        qvs [shape=house, color=red]
+        qvs -> hgd
+        qvs -> jrw
+        mnr [shape=box, color=blue]
+        mnr -> y27
+        mnr -> x27
+        sjg [shape=egg]
+        sjg -> y30
+        sjg -> x30
+        qfh [shape=box, color=blue]
+        qfh -> y31
+        qfh -> x31
+        qfg [shape=box, color=blue]
+        qfg -> x26
+        qfg -> y26
+        hdr [shape=box, color=blue]
+        hdr -> y42
+        hdr -> x42
+        qwh [shape=box, color=blue]
+        qwh -> y11
+        qwh -> x11
+        gsp [shape=house, color=red]
+        gsp -> qwh
+        gsp -> tvj
+        gck [shape=house, color=red]
+        gck -> qfh
+        gck -> mpr
+        tmr [shape=house, color=red]
+        tmr -> nvb
+        tmr -> rvj
+        dng [shape=box, color=blue]
+        dng -> x10
+        dng -> y10
+        hvj [shape=egg]
+        hvj -> x09
+        hvj -> y09
+        qgv [shape=egg]
+        qgv -> x24
+        qgv -> y24
+        mpf [shape=egg]
+        mpf -> y01
+        mpf -> x01
+        frs [shape=egg]
+        frs -> x41
+        frs -> y41
+        tnf [shape=egg]
+        tnf -> y12
+        tnf -> x12
+        mpr [shape=box, color=blue]
+        mpr -> twk
+        mpr -> qhv
+        mps [shape=egg]
+        mps -> mqj
+        mps -> pqn
+        jjw [shape=box, color=blue]
+        jjw -> fsf
+        jjw -> wnk
+        fsf [shape=house, color=red]
+        fsf -> pmc
+        fsf -> cfc
+        qhv [shape=egg]
+        qhv -> x31
+        qhv -> y31
+        hwq [shape=house, color=red]
+        hwq -> ptf
+        hwq -> fkm
+        hgd [shape=box, color=blue]
+        hgd -> x16
+        hgd -> y16
+        jkf [shape=box, color=blue]
+        jkf -> x41
+        jkf -> y41
+        mqj [shape=house, color=red]
+        mqj -> hjs
+        mqj -> fnw
+        jkg [shape=egg]
+        jkg -> x11
+        jkg -> y11
+        vbw [shape=box, color=blue]
+        vbw -> y25
+        vbw -> x25
+        hgj [shape=house, color=red]
+        hgj -> khb
+        hgj -> snc
+        bks [shape=box, color=blue]
+        bks -> qvs
+        bks -> thp
+        jkk [shape=box, color=blue]
+        jkk -> gbj
+        jkk -> mkt
+        vsj [shape=house, color=red]
+        vsj -> qbw
+        vsj -> mnr
+        mqs [shape=box, color=blue]
+        mqs -> y00
+        mqs -> x00
+        nsv [shape=egg]
+        nsv -> y39
+        nsv -> x39
+        smv [shape=egg]
+        smv -> y44
+        smv -> x44
+        dpq [shape=box, color=blue]
+        dpq -> gsp
+        dpq -> tnf
+        fts [shape=box, color=blue]
+        fts -> ksv
+        fts -> rmv
+        dpr [shape=box, color=blue]
+        dpr -> x29
+        dpr -> y29
+        hhf [shape=egg]
+        hhf -> x10
+        hhf -> y10
+        vcv [shape=egg]
+        vcv -> mks
+        vcv -> bhr
+        snc [shape=box, color=blue]
+        snc -> gck
+        snc -> cfb
+        mrm [shape=box, color=blue]
+        mrm -> x08
+        mrm -> y08
+        wvj [shape=house, color=red]
+        wvj -> pbw
+        wvj -> kvf
+        phd [shape=egg]
+        phd -> x37
+        phd -> y37
+        wvp [shape=box, color=blue]
+        wvp -> wvj
+        wvp -> tqm
+        snn [shape=box, color=blue]
+        snn -> ngh
+        snn -> kpj
+        hhr [shape=box, color=blue]
+        hhr -> y43
+        hhr -> x43
+        ndq [shape=house, color=red]
+        ndq -> hqt
+        ndq -> hdr
+        tqf [shape=egg]
+        tqf -> y36
+        tqf -> x36
+        ggk [shape=box, color=blue]
+        ggk -> hvj
+        ggk -> jpw
+        qkk [shape=box, color=blue]
+        qkk -> mqj
+        qkk -> pqn
+        tqm [shape=egg]
+        tqm -> y40
+        tqm -> x40
+        tqp [shape=box, color=blue]
+        tqp -> x44
+        tqp -> y44
+        rmv [shape=house, color=red]
+        rmv -> bks
+        rmv -> dgj
+        nvb [shape=box, color=blue]
+        nvb -> ddp
+        nvb -> thn
+        jnb [shape=egg]
+        jnb -> y26
+        jnb -> x26
+        kpc [shape=house, color=red]
+        kpc -> shg
+        kpc -> bqq
+        mtg [shape=box, color=blue]
+        mtg -> x15
+        mtg -> y15
+        kpj [shape=egg]
+        kpj -> y14
+        kpj -> x14
+        ffg [shape=box, color=blue]
+        ffg -> y28
+        ffg -> x28
+        hjs [shape=box, color=blue]
+        hjs -> x24
+        hjs -> y24
+        pjm [shape=egg]
+        pjm -> x22
+        pjm -> y22
+        mdk [shape=box, color=blue]
+        mdk -> frs
+        mdk -> khp
+        pjp [shape=box, color=blue]
+        pjp -> x23
+        pjp -> y23
+        vfk [shape=egg]
+        vfk -> y23
+        vfk -> x23
+        cqm [shape=box, color=blue]
+        cqm -> x33
+        cqm -> y33
+        nwk [shape=box, color=blue]
+        nwk -> x40
+        nwk -> y40
+        tbr [shape=box, color=blue]
+        tbr -> x06
+        tbr -> y06
+        dch [shape=egg]
+        dch -> x29
+        dch -> y29
+        dcj [shape=house, color=red]
+        dcj -> bcg
+        dcj -> mtg
+        ngh [shape=house, color=red]
+        ngh -> jpk
+        ngh -> vcv
+        vwp [shape=egg]
+        vwp -> csn
+        vwp -> nmn
+        pkm [shape=box, color=blue]
+        pkm -> y18
+        pkm -> x18
+        ngr [shape=box, color=blue]
+        ngr -> x19
+        ngr -> y19
+        tsw [shape=box, color=blue]
+        tsw -> sjg
+        tsw -> grr
+        vgm [shape=egg]
+        vgm -> x34
+        vgm -> y34
+        vgq [shape=egg]
+        vgq -> x16
+        vgq -> y16
+        krj [shape=house, color=red]
+        krj -> grn
+        krj -> ktj
+        crq [shape=box, color=blue]
+        crq -> krj
+        crq -> djc
+        jpk [shape=box, color=blue]
+        jpk -> bhr
+        jpk -> mks
+        nhb [shape=box, color=blue]
+        nhb -> x34
+        nhb -> y34
+        crw [shape=box, color=blue]
+        crw -> kpc
+        crw -> vfk
+        vhc [shape=house, color=red]
+        vhc -> tbr
+        vhc -> rvb
+        jpw [shape=house, color=red]
+        jpw -> crq
+        jpw -> mrm
+        ddp [shape=house, color=red]
+        ddp -> jdk
+        ddp -> btd
+        ttt [shape=box, color=blue]
+        ttt -> y01
+        ttt -> x01
+        z01 [shape=egg]
+        z01 -> mqs
+        z01 -> mpf
+        z00 [shape=egg]
+        z00 -> y00
+        z00 -> x00
+        qnw [shape=house, color=red]
+        qnw -> vjv
+        qnw -> djh
+        z03 [shape=egg]
+        z03 -> vjg
+        z03 -> htb
+        z02 [shape=egg]
+        z02 -> jwf
+        z02 -> hqj
+        z05 [shape=egg]
+        z05 -> thn
+        z05 -> ddp
+        csn [shape=house, color=red]
+        csn -> fts
+        csn -> pkm
+		z04 [shape=egg]
+		z04 -> hwq
+		z04 -> vnb
+}
